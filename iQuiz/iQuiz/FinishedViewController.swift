@@ -10,6 +10,8 @@ import UIKit
 
 class FinishedViewController: UIViewController {
 
+    // General Variables and UI Outlets //
+    
     var numCorrect = 0
     var total = 4
     var gradeDescription = ""
@@ -17,6 +19,8 @@ class FinishedViewController: UIViewController {
     
     @IBOutlet weak var gradeDescLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
+    
+    // General State Controller Stuff // 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +54,14 @@ class FinishedViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
     }
     
-    func popToRoot(sender:UIBarButtonItem){
-        self.navigationController!.popToRootViewControllerAnimated(true)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Segue Stuff // 
+    
+    func popToRoot(sender:UIBarButtonItem){
+        self.navigationController!.popToRootViewControllerAnimated(true)
     }
 
 }

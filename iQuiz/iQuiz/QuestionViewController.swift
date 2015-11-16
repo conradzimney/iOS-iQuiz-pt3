@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // General Variables and UI outlets //
+    
     var questions = [String]()
     var answers = [Array<String>()]
     
@@ -22,6 +24,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     var subject = ""
     let cellTableIdentifier = "cell"
     var selectedAnswer = ""
+    
+    // State Controller Stuff //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +44,14 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
     }
 
-    func popToRoot(sender:UIBarButtonItem){
-        self.navigationController!.popToRootViewControllerAnimated(true)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Segue Stuff //
+    
+    func popToRoot(sender:UIBarButtonItem){
+        self.navigationController!.popToRootViewControllerAnimated(true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,6 +67,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
+    
+    // TableView Stuff //
     
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {

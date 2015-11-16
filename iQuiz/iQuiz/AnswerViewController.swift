@@ -9,27 +9,8 @@
 import UIKit
 
 class AnswerViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        questionLabel.text = question
-        yourAnswerLabel.text = "Your answer: \(chosenAnswer)"
-        correctAnswerLabel.text = "Correct answer: \(correctAnswer)"
-        if correctAnswer == chosenAnswer {
-            correctnessLabel.text = "Correct!"
-            numCorrect++
-        } else {
-            correctnessLabel.text = "Incorrect..."
-        }
-        if questionNumber == 3 {
-            done = true
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    
+    // General Variables and UI Outlets //
     
     var questions = [String]()
     var answers = [Array<String>()]
@@ -48,6 +29,31 @@ class AnswerViewController: UIViewController {
     
     @IBOutlet weak var correctnessLabel: UILabel!
 
+    // View Controller Functions //
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        questionLabel.text = question
+        yourAnswerLabel.text = "Your answer: \(chosenAnswer)"
+        correctAnswerLabel.text = "Correct answer: \(correctAnswer)"
+        if correctAnswer == chosenAnswer {
+            correctnessLabel.text = "Correct!"
+            numCorrect++
+        } else {
+            correctnessLabel.text = "Incorrect..."
+        }
+        if questionNumber == 3 {
+            done = true
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Segue and Button Controllers //
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowQuestionSegue" {
             if let destinationVC = segue.destinationViewController as? QuestionViewController {

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // Local Data Questions and Answers //
+    
     let topics = [
         ["Subject" : "Mathematics", "Description" : "Mathematics Quiz!"],
         ["Subject" : "Marvel Super Heroes", "Description" : "Marvel Super Heroes Quiz!"],
@@ -38,6 +40,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ["4","1","3","2"]
     ]
     
+    // Network and Storage Data // 
+    
+    
+    
+    // General UI and ViewController Stuff // 
+    
     var selectedSubject = ""
     let cellTableIdentifier = "CellTableIdentifier"
     @IBOutlet var tableView: UITableView!
@@ -50,6 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // Button Functions //
     
     @IBAction func settingsClicked(sender: AnyObject) {
         let message = "Settings will go here!"
@@ -72,6 +82,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.presentViewController(controller, animated: true, completion: nil)
         }
     }
+    
+    // Segue functions //
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowQuestionSegue" {
