@@ -48,6 +48,16 @@
                ReferencedContainer = "container:iQuiz.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE3F05771BFC166C00750070"
+               BuildableName = "iQuizTests3.xctest"
+               BlueprintName = "iQuizTests3"
+               ReferencedContainer = "container:iQuiz.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

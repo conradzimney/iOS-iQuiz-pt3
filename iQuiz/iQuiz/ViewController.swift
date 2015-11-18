@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // Local Data Questions and Answers //
     
+    var loadedQuizzes : [AnyObject] = []
+    
     let topics = [
         ["Subject" : "Mathematics", "Description" : "Mathematics Quiz!"],
         ["Subject" : "Marvel Super Heroes", "Description" : "Marvel Super Heroes Quiz!"],
@@ -40,10 +42,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ["4","1","3","2"]
     ]
     
-    // Network and Storage Data // 
-    
-    
-    
     // General UI and ViewController Stuff // 
     
     var selectedSubject = ""
@@ -53,6 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(QuizCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        print("Loadeds Quizzes: \(loadedQuizzes)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,17 +60,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Button Functions //
     
-    @IBAction func settingsClicked(sender: AnyObject) {
-        let message = "Settings will go here!"
-        let controller = UIAlertController(title: "Settings",
-            message: message, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK",
-            style: .Default, handler: nil)
-        controller.addAction(action)
-        self.presentViewController(controller, animated: true, completion: nil)
-    }
-    
     @IBAction func takeThisQuiz(sender: AnyObject) {
+        print("Loadeds Quizzes: \(loadedQuizzes)")
         if selectedSubject == "" {
             let message = "Please select a quiz"
             let controller = UIAlertController(title: "Error",
@@ -105,6 +95,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
         }
+        if segue.identifier == "ShowSettingsSegue" {
+            if let destinationVC = segue.destinationViewController as? SettingsViewController {
+                // prepare unwoundToMVC, no data to send to settings...
+            }
+        }
+    }
+    
+    @IBAction func goBack(segue : UIStoryboardSegue) {
+        print("Someone came back to me!")
+        print("Loadeds Quizzes: \(loadedQuizzes)")
     }
     
     // Table View stuff //

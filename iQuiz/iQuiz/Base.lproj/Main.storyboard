@@ -33,7 +33,9 @@
                     <navigationItem key="navigationItem" title="Quizzes" id="Ag2-ha-p9r">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="7xe-qF-3tR">
                             <connections>
-                                <action selector="settingsClicked:" destination="BYZ-38-t0r" id="Szf-FJ-uwT"/>
+                                <segue destination="253-bU-NL5" kind="popoverPresentation" identifier="ShowSettingsSegue" popoverAnchorBarButtonItem="7xe-qF-3tR" id="Xjq-y3-6V4">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Take the Quiz!" id="4mC-sJ-rCX">
@@ -50,6 +52,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063" y="362"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="hgY-S2-Irq">
+            <objects>
+                <viewController id="253-bU-NL5" customClass="SettingsViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0XZ-2d-rop"/>
+                        <viewControllerLayoutGuide type="bottom" id="bjc-6H-xUb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9mQ-Fu-Y4l">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download New Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cc-CM-Vwm">
+                                <rect key="frame" x="202" y="256" width="197" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vp1-7F-rAQ">
+                                <rect key="frame" x="261" y="323" width="79" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Check Now"/>
+                                <connections>
+                                    <action selector="checkNow:" destination="253-bU-NL5" eventType="touchUpInside" id="dBT-pU-dZt"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-6B-7wn">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem id="c2i-FX-EHB">
+                                        <barButtonItem key="leftBarButtonItem" title="Done" id="s6g-tc-FeK">
+                                            <connections>
+                                                <segue destination="UAy-dG-YEI" kind="unwind" unwindAction="goBack:" id="ujs-3f-Q60"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-5k-SyG">
+                                <rect key="frame" x="126" y="285" width="335" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vp1-7F-rAQ" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="97g-j0-ddc"/>
+                            <constraint firstItem="6Cc-CM-Vwm" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="S0e-dA-9z0"/>
+                            <constraint firstItem="vI8-5k-SyG" firstAttribute="top" secondItem="6Cc-CM-Vwm" secondAttribute="bottom" constant="8.5" id="ayq-n9-0h2"/>
+                            <constraint firstItem="vI8-5k-SyG" firstAttribute="centerY" secondItem="9mQ-Fu-Y4l" secondAttribute="centerY" id="cS7-xa-2GW"/>
+                            <constraint firstItem="vI8-5k-SyG" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="wVl-dV-8vQ"/>
+                            <constraint firstItem="vp1-7F-rAQ" firstAttribute="top" secondItem="vI8-5k-SyG" secondAttribute="bottom" constant="8" id="zL3-3X-4Lv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textBox" destination="vI8-5k-SyG" id="uJs-Nt-8y5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pa-c5-ejC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UAy-dG-YEI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="-355"/>
         </scene>
         <!--<Subject> Quiz-->
         <scene sceneID="9yz-Ny-7XU">
@@ -260,6 +329,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zm7-QQ-gV2"/>
+        <segue reference="TRV-04-VaE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3F05831BFC187800750070 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = CE3F05821BFC187800750070 /* questions.json */; };
+		CE3F05851BFC30FA00750070 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F05841BFC30FA00750070 /* SettingsViewController.swift */; };
 		CE4725551BE6A37F0035F750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4725541BE6A37F0035F750 /* AppDelegate.swift */; };
 		CE4725571BE6A37F0035F750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4725561BE6A37F0035F750 /* ViewController.swift */; };
 		CE47255A1BE6A37F0035F750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4725581BE6A37F0035F750 /* Main.storyboard */; };
@@ -21,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CE3F057D1BFC166C00750070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE4725491BE6A37F0035F750 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE4725501BE6A37F0035F750;
+			remoteInfo = iQuiz;
+		};
 		CE4725661BE6A37F0035F750 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE4725491BE6A37F0035F750 /* Project object */;
@@ -38,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE3F05781BFC166C00750070 /* iQuizTests3.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizTests3.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3F05821BFC187800750070 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questions.json; path = iQuizTests3/questions.json; sourceTree = SOURCE_ROOT; };
+		CE3F05841BFC30FA00750070 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CE4725511BE6A37F0035F750 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4725541BE6A37F0035F750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4725561BE6A37F0035F750 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE3F05751BFC166C00750070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE47254E1BE6A37F0035F750 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +117,7 @@
 				CE4725511BE6A37F0035F750 /* iQuiz.app */,
 				CE4725651BE6A37F0035F750 /* iQuizTests.xctest */,
 				CE4725701BE6A37F0035F750 /* iQuizUITests.xctest */,
+				CE3F05781BFC166C00750070 /* iQuizTests3.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +130,7 @@
 				CE4725561BE6A37F0035F750 /* ViewController.swift */,
 				CE6B3B121BF15AB9000370AB /* QuestionViewController.swift */,
 				CE4725581BE6A37F0035F750 /* Main.storyboard */,
+				CE3F05841BFC30FA00750070 /* SettingsViewController.swift */,
 				CE6B3B181BF19AC4000370AB /* FinishedViewController.swift */,
 				CE6B3B141BF15F1E000370AB /* AnswerViewController.swift */,
 				CE47255B1BE6A37F0035F750 /* Assets.xcassets */,
@@ -122,6 +143,7 @@
 		CE4725681BE6A37F0035F750 /* iQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE3F05821BFC187800750070 /* questions.json */,
 				CE4725691BE6A37F0035F750 /* iQuizTests.swift */,
 				CE47256B1BE6A37F0035F750 /* Info.plist */,
 			);
@@ -140,6 +162,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE3F05771BFC166C00750070 /* iQuizTests3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE3F05811BFC166C00750070 /* Build configuration list for PBXNativeTarget "iQuizTests3" */;
+			buildPhases = (
+				CE3F05741BFC166C00750070 /* Sources */,
+				CE3F05751BFC166C00750070 /* Frameworks */,
+				CE3F05761BFC166C00750070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE3F057E1BFC166C00750070 /* PBXTargetDependency */,
+			);
+			name = iQuizTests3;
+			productName = iQuizTests3;
+			productReference = CE3F05781BFC166C00750070 /* iQuizTests3.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CE4725501BE6A37F0035F750 /* iQuiz */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE4725791BE6A37F0035F750 /* Build configuration list for PBXNativeTarget "iQuiz" */;
@@ -203,6 +243,11 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Conrad Zimney";
 				TargetAttributes = {
+					CE3F05771BFC166C00750070 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = AD8B62TPLD;
+						TestTargetID = CE4725501BE6A37F0035F750;
+					};
 					CE4725501BE6A37F0035F750 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = AD8B62TPLD;
@@ -235,11 +280,20 @@
 				CE4725501BE6A37F0035F750 /* iQuiz */,
 				CE4725641BE6A37F0035F750 /* iQuizTests */,
 				CE47256F1BE6A37F0035F750 /* iQuizUITests */,
+				CE3F05771BFC166C00750070 /* iQuizTests3 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE3F05761BFC166C00750070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3F05831BFC187800750070 /* questions.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE47254F1BE6A37F0035F750 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,12 +321,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE3F05741BFC166C00750070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE47254D1BE6A37F0035F750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CE6B3B191BF19AC4000370AB /* FinishedViewController.swift in Sources */,
 				CE4725831BE6DB3F0035F750 /* QuizCell.swift in Sources */,
+				CE3F05851BFC30FA00750070 /* SettingsViewController.swift in Sources */,
 				CE6B3B131BF15AB9000370AB /* QuestionViewController.swift in Sources */,
 				CE6B3B151BF15F1E000370AB /* AnswerViewController.swift in Sources */,
 				CE4725571BE6A37F0035F750 /* ViewController.swift in Sources */,
@@ -299,6 +361,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE3F057E1BFC166C00750070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE4725501BE6A37F0035F750 /* iQuiz */;
+			targetProxy = CE3F057D1BFC166C00750070 /* PBXContainerItemProxy */;
+		};
 		CE4725671BE6A37F0035F750 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE4725501BE6A37F0035F750 /* iQuiz */;
@@ -331,6 +398,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CE3F057F1BFC166C00750070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iQuizTests3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.conrad16.iQuizTests3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iQuiz.app/iQuiz";
+			};
+			name = Debug;
+		};
+		CE3F05801BFC166C00750070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iQuizTests3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.conrad16.iQuizTests3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iQuiz.app/iQuiz";
+			};
+			name = Release;
+		};
 		CE4725771BE6A37F0035F750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -487,6 +578,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE3F05811BFC166C00750070 /* Build configuration list for PBXNativeTarget "iQuizTests3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3F057F1BFC166C00750070 /* Debug */,
+				CE3F05801BFC166C00750070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE47254C1BE6A37F0035F750 /* Build configuration list for PBXProject "iQuiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
