@@ -31,7 +31,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         self.questionTableView.delegate = self
         self.questionTableView.dataSource = self
-        quizTitle.title = "\(subject) Quiz"
+        quizTitle.title = "\(subject)"
         questionLabel.text = questions[questionNumber]
         
         navigationController!.setNavigationBarHidden(false, animated:true)

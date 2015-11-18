@@ -40,7 +40,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Take the Quiz!" id="4mC-sJ-rCX">
                             <connections>
-                                <action selector="takeThisQuiz:" destination="BYZ-38-t0r" id="cr8-25-zqB"/>
                                 <segue destination="IqU-DR-If7" kind="show" identifier="ShowQuestionSegue" id="TRV-04-VaE"/>
                             </connections>
                         </barButtonItem>
@@ -87,7 +86,7 @@
                                     <navigationItem id="c2i-FX-EHB">
                                         <barButtonItem key="leftBarButtonItem" title="Done" id="s6g-tc-FeK">
                                             <connections>
-                                                <segue destination="UAy-dG-YEI" kind="unwind" unwindAction="goBack:" id="ujs-3f-Q60"/>
+                                                <segue destination="UAy-dG-YEI" kind="unwind" identifier="UnwindSegue" unwindAction="goBack:" id="ujs-3f-Q60"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
