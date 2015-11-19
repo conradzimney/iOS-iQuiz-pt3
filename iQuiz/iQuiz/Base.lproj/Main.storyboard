@@ -82,25 +82,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kHW-o1-frO">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-bc-ddp">
+                                    <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-6B-7wn">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <subviews>
-                                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-6B-7wn">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                                <animations/>
-                                                <items>
-                                                    <navigationItem id="c2i-FX-EHB">
-                                                        <barButtonItem key="leftBarButtonItem" title="Done" id="s6g-tc-FeK">
-                                                            <connections>
-                                                                <segue destination="UAy-dG-YEI" kind="unwind" identifier="UnwindSegue" unwindAction="goBack:" id="ujs-3f-Q60"/>
-                                                            </connections>
-                                                        </barButtonItem>
-                                                    </navigationItem>
-                                                </items>
-                                            </navigationBar>
-                                        </subviews>
                                         <animations/>
-                                    </stackView>
+                                        <items>
+                                            <navigationItem id="c2i-FX-EHB">
+                                                <barButtonItem key="leftBarButtonItem" title="Done" id="s6g-tc-FeK">
+                                                    <connections>
+                                                        <segue destination="UAy-dG-YEI" kind="unwind" identifier="UnwindSegue" unwindAction="goBack:" id="ujs-3f-Q60"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <animations/>
                             </stackView>

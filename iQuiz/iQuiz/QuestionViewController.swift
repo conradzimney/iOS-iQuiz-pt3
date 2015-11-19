@@ -40,7 +40,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle("Back", forState: UIControlState.Normal)
         myBackButton.sizeToFit()
-        myBackButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        myBackButton.setTitleColor(UIColor(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.9), forState: UIControlState.Normal)
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem = myCustomBackButtonItem
     }
