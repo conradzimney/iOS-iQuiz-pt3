@@ -96,7 +96,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                         answers[j] = currentQuestionDict["answers"] as! [String]
                                         let answerString = currentQuestionDict["answer"] as! String
                                         let answerInt : Int? = Int(answerString)
-                                        //print("\(answerString)")
                                         correctAnswerNumbersArray[j] = answerInt!-1
                                     }
                                     destinationVC.questions = questionsArray
@@ -105,13 +104,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                 }
                             }
                         }
-                        
                     }
-                    
-                    //destinationVC.questions = loadedQuizzes
-                    // destinationVC.answers = 
-                    // destinatioVC.answer =
-                    
                 }
             }
         }
@@ -120,7 +113,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func goBack(segue : UIStoryboardSegue) {
         // ViewController was Unwound to (from Settings View Controller)
         self.tableView.reloadData()
-        print("\(loadedQuizzes)")
     }
     
     // Table View stuff //

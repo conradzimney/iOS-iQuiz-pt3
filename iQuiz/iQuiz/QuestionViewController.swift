@@ -34,9 +34,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         self.questionTableView.dataSource = self
         quizTitle.title = "\(subject)"
         questionLabel.text = questions[questionNumber]
-        
-        print("\(correctAnswerNumberArray)")
-        
+                
         navigationController!.setNavigationBarHidden(false, animated:true)
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom) as UIButton
         myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)

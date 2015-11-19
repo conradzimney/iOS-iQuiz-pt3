@@ -24,20 +24,17 @@ class FinishedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch numCorrect {
-        case 4:
+        let percent : Double = Double(numCorrect)/Double(total)
+        if percent == 1.0 {
             gradeDescription = "Perfect!"
             grade = "You got \(numCorrect) out of \(total) correct."
-        case 3:
+        } else if percent >= 0.8 {
             gradeDescription = "Not bad!"
             grade = "You got \(numCorrect) out of \(total) correct."
-        case 2:
-            gradeDescription = "50% is still an F..."
+        } else if percent >= 0.5 {
+            gradeDescription = "Could use some work."
             grade = "You got \(numCorrect) out of \(total) correct."
-        case 1:
-            gradeDescription = "Not very good."
-            grade = "You got \(numCorrect) out of \(total) correct."
-        default:
+        } else {
             gradeDescription = "You need some serious improvement..."
             grade = "You got \(numCorrect) out of \(total) correct."
         }

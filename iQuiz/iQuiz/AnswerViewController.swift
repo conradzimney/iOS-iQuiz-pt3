@@ -67,6 +67,7 @@ class AnswerViewController: UIViewController {
         } else if segue.identifier == "ShowFinishedSegue" {
             if let destinationVC = segue.destinationViewController as? FinishedViewController {
                 destinationVC.numCorrect = numCorrect
+                destinationVC.total = questions.count
             }
         }
     }
