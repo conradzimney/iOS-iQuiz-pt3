@@ -20,6 +20,7 @@ class AnswerViewController: UIViewController {
     var question = ""
     var questionNumber = 0
     var numCorrect = 0
+    var correctAnswerNumberArray : [Int] = []
 
     @IBOutlet weak var questionLabel: UILabel!
     
@@ -37,13 +38,13 @@ class AnswerViewController: UIViewController {
         questionLabel.text = question
         yourAnswerLabel.text = "Your answer: \(chosenAnswer)"
         correctAnswerLabel.text = "Correct answer: \(correctAnswer)"
-        if correctAnswer == chosenAnswer {
+        if answers[questionNumber][correctAnswerNumberArray[questionNumber]] == chosenAnswer {
             correctnessLabel.text = "Correct!"
             numCorrect++
         } else {
             correctnessLabel.text = "Incorrect..."
         }
-        if questionNumber == 3 {
+        if questionNumber == questions.count-1 {
             done = true
         }
     }
@@ -61,6 +62,7 @@ class AnswerViewController: UIViewController {
                 destinationVC.questions = questions
                 destinationVC.answers = answers
                 destinationVC.numCorrect = numCorrect
+                destinationVC.correctAnswerNumberArray = correctAnswerNumberArray
             }
         } else if segue.identifier == "ShowFinishedSegue" {
             if let destinationVC = segue.destinationViewController as? FinishedViewController {

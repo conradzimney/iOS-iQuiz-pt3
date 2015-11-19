@@ -24,6 +24,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
     var subject = ""
     let cellTableIdentifier = "cell"
     var selectedAnswer = ""
+    var correctAnswerNumberArray : [Int] = []
     
     // State Controller Stuff //
     
@@ -33,6 +34,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         self.questionTableView.dataSource = self
         quizTitle.title = "\(subject)"
         questionLabel.text = questions[questionNumber]
+        
+        print("\(correctAnswerNumberArray)")
         
         navigationController!.setNavigationBarHidden(false, animated:true)
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom) as UIButton
@@ -58,12 +61,13 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "ShowAnswerSegue" {
             if let destinationVC = segue.destinationViewController as? AnswerViewController {
                 destinationVC.chosenAnswer = selectedAnswer
-                destinationVC.correctAnswer = answers[questionNumber][questionNumber]
+                destinationVC.correctAnswer = answers[questionNumber][correctAnswerNumberArray[questionNumber]]
                 destinationVC.question = questions[questionNumber]
                 destinationVC.questionNumber = questionNumber
                 destinationVC.questions = questions
                 destinationVC.answers = answers
                 destinationVC.numCorrect = numCorrect
+                destinationVC.correctAnswerNumberArray = correctAnswerNumberArray
             }
         }
     }

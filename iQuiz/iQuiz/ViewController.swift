@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ["title" : "Marvel Super Heroes", "desc" : "Marvel Super Heroes Quiz!"],
         ["title" : "Science", "desc" : "Science Quiz!"]
     ]
-    
+    let correctAnswerNumberArray = [0,1,2,3]
     let mathQuestions = ["What is 2 + 2?","What is 45 / 9?","What is 9 * 11?", "What is 55-35?"]
     let mathAnswers = [
         ["4","23","9","6"],
@@ -79,9 +79,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         destinationVC.questions = []
                         destinationVC.answers = []
                     }
+                    destinationVC.correctAnswerNumberArray = self.correctAnswerNumberArray
                 } else {
                     // Using dynamically loaded network data
-                    // destinationVC.questions = 
+                    if let quizzes = loadedQuizzes as? [NSDictionary] {
+                        for var i = 0; i < quizzes.count; i++ {
+                            if let title = quizzes[i]["title"] as? String {
+                                if title == selectedSubject {
+                                    var questionsDictArray = quizzes[i]["questions"] as! [NSDictionary]
+                                    var questionsArray = [String](count: questionsDictArray.count, repeatedValue: "")
+                                    var answers = [["","","",""],["","","",""],["","","",""],["","","",""]]
+                                    var correctAnswerNumbersArray = [Int](count: questionsDictArray.count, repeatedValue: 0)
+                                    for var j = 0; j < questionsDictArray.count; j++ {
+                                        let currentQuestionDict = questionsDictArray[j]
+                                        questionsArray[j] = currentQuestionDict["text"] as! String
+                                        answers[j] = currentQuestionDict["answers"] as! [String]
+                                        let answerString = currentQuestionDict["answer"] as! String
+                                        let answerInt : Int? = Int(answerString)
+                                        //print("\(answerString)")
+                                        correctAnswerNumbersArray[j] = answerInt!-1
+                                    }
+                                    destinationVC.questions = questionsArray
+                                    destinationVC.answers = answers
+                                    destinationVC.correctAnswerNumberArray = correctAnswerNumbersArray
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    //destinationVC.questions = loadedQuizzes
                     // destinationVC.answers = 
                     // destinatioVC.answer =
                     
