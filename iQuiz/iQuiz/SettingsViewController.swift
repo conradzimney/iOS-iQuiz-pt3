@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController {
 
     var quizzes : [NSDictionary] = [NSDictionary]()
     
+    var USING_LOCAL_DATA : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textBox.text = "https://tednewardsandbox.site44.com/questions.json"
@@ -24,7 +26,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func checkNow(sender: UIButton) {
-        // fire NSURL session here
         let newURL = self.textBox.text
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -36,17 +37,24 @@ class SettingsViewController: UIViewController {
             print("URL Task Worked: \(statusCode)")
             do {
                 self.quizzes = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! [NSDictionary]
+                self.USING_LOCAL_DATA = false
             } catch {
                 print("Something didn't work...")
+                self.USING_LOCAL_DATA = true
             }
         }
         task.resume()
     }
     
+    @IBAction func useLocalData(sender: AnyObject) {
+        self.USING_LOCAL_DATA = true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UnwindSegue" {
             if let destinationVC = segue.destinationViewController as? ViewController {
-                destinationVC.loadedQuizzes = quizzes 
+                destinationVC.loadedQuizzes = quizzes
+                destinationVC.USING_LOCAL_DATA = self.USING_LOCAL_DATA
             }
         }
     }

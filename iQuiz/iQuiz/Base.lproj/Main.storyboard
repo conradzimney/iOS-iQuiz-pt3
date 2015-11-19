@@ -79,33 +79,55 @@
                                     <action selector="checkNow:" destination="253-bU-NL5" eventType="touchUpInside" id="dBT-pU-dZt"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-6B-7wn">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kHW-o1-frO">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-bc-ddp">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-6B-7wn">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                <animations/>
+                                                <items>
+                                                    <navigationItem id="c2i-FX-EHB">
+                                                        <barButtonItem key="leftBarButtonItem" title="Done" id="s6g-tc-FeK">
+                                                            <connections>
+                                                                <segue destination="UAy-dG-YEI" kind="unwind" identifier="UnwindSegue" unwindAction="goBack:" id="ujs-3f-Q60"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <items>
-                                    <navigationItem id="c2i-FX-EHB">
-                                        <barButtonItem key="leftBarButtonItem" title="Done" id="s6g-tc-FeK">
-                                            <connections>
-                                                <segue destination="UAy-dG-YEI" kind="unwind" identifier="UnwindSegue" unwindAction="goBack:" id="ujs-3f-Q60"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-5k-SyG">
                                 <rect key="frame" x="126" y="285" width="335" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9M-ri-wi8">
+                                <rect key="frame" x="248" y="424" width="104" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Use Local Data"/>
+                                <connections>
+                                    <action selector="useLocalData:" destination="253-bU-NL5" eventType="touchUpInside" id="TQL-tz-nZL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="q9M-ri-wi8" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="6zX-55-SSb"/>
                             <constraint firstItem="vp1-7F-rAQ" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="97g-j0-ddc"/>
                             <constraint firstItem="6Cc-CM-Vwm" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="S0e-dA-9z0"/>
                             <constraint firstItem="vI8-5k-SyG" firstAttribute="top" secondItem="6Cc-CM-Vwm" secondAttribute="bottom" constant="8.5" id="ayq-n9-0h2"/>
                             <constraint firstItem="vI8-5k-SyG" firstAttribute="centerY" secondItem="9mQ-Fu-Y4l" secondAttribute="centerY" id="cS7-xa-2GW"/>
+                            <constraint firstItem="q9M-ri-wi8" firstAttribute="top" secondItem="vp1-7F-rAQ" secondAttribute="bottom" constant="71" id="ve3-Nq-9Y2"/>
                             <constraint firstItem="vI8-5k-SyG" firstAttribute="centerX" secondItem="9mQ-Fu-Y4l" secondAttribute="centerX" id="wVl-dV-8vQ"/>
                             <constraint firstItem="vp1-7F-rAQ" firstAttribute="top" secondItem="vI8-5k-SyG" secondAttribute="bottom" constant="8" id="zL3-3X-4Lv"/>
                         </constraints>

@@ -40,13 +40,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ["4","1","3","2"]
     ]
     
-    // Network Derived Data // 
+    // General UI, ViewController, Data Variables //
     
     var loadedQuizzes : [AnyObject] = []
-    
     var USING_LOCAL_DATA : Bool = true
-    
-    // General UI and ViewController Stuff // 
     
     var selectedSubject = ""
     let cellTableIdentifier = "CellTableIdentifier"
@@ -91,19 +88,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
         }
-        if segue.identifier == "ShowSettingsSegue" {
-            if let destinationVC = segue.destinationViewController as? SettingsViewController {
-                // prepare unwoundToMVC, no data to send to settings...
-            }
-        }
     }
     
     @IBAction func goBack(segue : UIStoryboardSegue) {
         // ViewController was Unwound to (from Settings View Controller)
         self.tableView.reloadData()
-        if loadedQuizzes.count != 0 {
-            USING_LOCAL_DATA = false
-        }
         print("\(loadedQuizzes)")
     }
     
@@ -146,78 +135,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
-    
-    
-    /*
-    let localQuizData = [
-    { "title" :"Mathematics",
-    desc: "Mathematics Quiz!",
-    "questions" : [
-    {
-    "text": "What is 2 + 2?",
-    "answer" : 1,
-    "answers": ["4","23","9","6"]
-    }, {
-    "text": "What is 45 / 9?",
-    "answer" : 2,
-    "answers": ["53","5","45","21"]
-    }, {
-    "text": "What is 9 * 11?",
-    "answer" : 3,
-    "answers": ["-1","67","99","100"]
-    }, {
-    "text": "What is 55-35?",
-    "answer" : 4,
-    "answers": ["x","y","23","20"]
-    }
-    ]
-    },
-    { "title": "Mathematics",
-    "desc": "Mathematics Quiz!",
-    "questions" : [
-    {
-    "text": "What is 2 + 2?",
-    "answer" : 1,
-    "answers": ["4","23","9","6"]
-    }, {
-    "text": "What is 45 / 9?",
-    "answer" : 2,
-    "answers": ["53","5","45","21"]
-    }, {
-    "text": "What is 9 * 11?",
-    "answer" : 3,
-    "answers": ["-1","67","99","100"]
-    }, {
-    "text": "What is 55-35?",
-    "answer" : 4,
-    "answers": ["x","y","23","20"]
-    }
-    ]
-    },
-    { "title": "Mathematics",
-    "desc": "Mathematics Quiz!",
-    "questions" : [
-    {
-    "text": "What is 2 + 2?",
-    "answer" : 1,
-    "answers": ["4","23","9","6"]
-    }, {
-    "text": "What is 45 / 9?",
-    "answer" : 2,
-    "answers": ["53","5","45","21"]
-    }, {
-    "text": "What is 9 * 11?",
-    "answer" : 3,
-    "answers": ["-1","67","99","100"]
-    }, {
-    "text": "What is 55-35?",
-    "answer" : 4,
-    "answers": ["x","y","23","20"]
-    }
-    ]
-    }
-    ]
-    */
 }
 
 
